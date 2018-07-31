@@ -26,6 +26,7 @@
             </v-list-tile>
             <v-divider v-if="index + 1 < articles.length" :key="`divider-${index}`"></v-divider>
           </template>
+          <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </v-list>
       </v-card>
     </v-flex>
@@ -33,13 +34,37 @@
 </template>
 
 <script>
+import InfiniteLoading from 'vue-infinite-loading';
 
 export default {
+  components: {
+    InfiniteLoading,
+  },
+  data() {
+    return {
+      page: 1
+    }
+  },
   async asyncData({app}) {
+    // TODO: GETリクエストはクライアントに移植
     let articles = await app.$axios.$get('https://collective-times-api.herokuapp.com/v1/articles');
     return {
       articles: articles.articles
     }
+  },
+  methods: {
+    infiniteHandler($state) {
+      this.page++;
+      // TODO: URLを設定ファイルにまとめる
+      this.$axios.$get('https://collective-times-api.herokuapp.com/v1/articles?page=' + this.page)
+        .then((response) => {
+          this.articles = this.articles.concat(response.articles);
+          $state.loaded();
+        }).catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+    },
   }
 }
 </script>
