@@ -33,10 +33,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
   },
-  plugins: [
-    '~plugins/vuetify.js'
-  ]
+  modules: [
+    '@nuxtjs/vuetify'
+  ],
 }
 
