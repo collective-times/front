@@ -47,7 +47,7 @@ export default {
   },
   async asyncData({app}) {
     // TODO: GETリクエストはクライアントに移植
-    let articles = await app.$axios.$get('https://collective-times-api.herokuapp.com/v1/articles');
+    let articles = await app.$axios.$get('/v1/articles');
     return {
       articles: articles.articles
     }
@@ -56,7 +56,7 @@ export default {
     infiniteHandler($state) {
       this.page++;
       // TODO: URLを設定ファイルにまとめる
-      this.$axios.$get('https://collective-times-api.herokuapp.com/v1/articles?page=' + this.page)
+      this.$axios.$get('/v1/articles?page=' + this.page)
         .then((response) => {
           this.articles = this.articles.concat(response.articles);
           $state.loaded();
