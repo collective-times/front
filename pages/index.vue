@@ -14,6 +14,7 @@
                     ripple
                     :key="article.title"
                     :href="article.articleUrl"
+                    target="_blank"
             >
               <v-avatar>
                 <img :src="article.imageUrl">
