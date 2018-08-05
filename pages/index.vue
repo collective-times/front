@@ -55,7 +55,6 @@ export default {
   methods: {
     infiniteHandler($state) {
       this.page++;
-      // TODO: URLを設定ファイルにまとめる
       this.$axios.$get('/v1/articles?page=' + this.page)
         .then((response) => {
           this.articles = this.articles.concat(response.articles);
