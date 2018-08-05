@@ -1,3 +1,6 @@
+const environment = process.env.NODE_ENV || 'development';
+const envSet = require(`./env.${environment}.js`)
+
 module.exports = {
   /*
   ** Headers of the page
@@ -39,5 +42,9 @@ module.exports = {
     '@nuxtjs/vuetify',
     '@nuxtjs/axios',
   ],
+  env: envSet,
+  axios: {
+    baseURL: envSet.apiBaseUrl
+  }
 }
 
