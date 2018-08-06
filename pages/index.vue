@@ -27,7 +27,9 @@
             </v-list-tile>
             <v-divider v-if="index + 1 < articles.length" :key="`divider-${index}`"></v-divider>
           </template>
-          <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+          <no-ssr>
+            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+          </no-ssr>
         </v-list>
       </v-card>
     </v-flex>
