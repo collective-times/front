@@ -30,6 +30,7 @@
     ></v-text-field>
 
     <v-btn
+            @click="createSite"
     >Submit</v-btn>
   </v-form>
 </template>
@@ -46,6 +47,22 @@ export default {
       className: '',
     }
   },
+  methods: {
+    createSite() {
+      this.$axios.post('/v1/sites', {
+        title: this.title,
+        feedUrl: this.feedUrl,
+        sourceUrl: this.sourceUrl,
+        crawlable: this.crawlable,
+        class: this.className,
+      }).then(() => {
+        console.log('success');
+        this.$router.push('/sites');
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+  }
 }
 </script>
 
