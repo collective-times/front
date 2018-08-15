@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <nuxt/>
-  </div>
+  <v-layout row>
+    <v-flex xs12 sm6 offset-sm3>
+      <nuxt/>
+    </v-flex>
+  </v-layout>
 </template>
 
 <style>
