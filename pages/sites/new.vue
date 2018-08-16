@@ -1,12 +1,5 @@
 <template>
   <v-form>
-
-    <v-toolbar color="cyan" dark>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Collective Times</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
-
     <v-text-field
             v-model="title"
             label="サイト名"
