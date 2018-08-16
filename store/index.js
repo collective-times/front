@@ -15,8 +15,6 @@ export const mutations = {
 export const actions = {
   async login({commit}, {username, password}) {
     try {
-      console.log("clientId:" + process.env.clientId);
-      console.log("clientSecret:" + process.env.clientSecret);
       const {data} = await this.$axios.post('/oauth/token', {
         grant_type: 'password',
         client_id: process.env.clientId,
