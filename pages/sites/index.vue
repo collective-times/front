@@ -25,7 +25,9 @@
 <script>
 
 export default {
-  async asyncData({app}) {
+  middleware: 'auth',
+  async asyncData({app, store}) {
+    app.$axios.setHeader('Authorization', 'Bearer ' + store.state.accessToken);
     let sites = await app.$axios.$get('/v1/sites');
     return {
       sites: sites.sites

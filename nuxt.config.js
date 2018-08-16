@@ -44,7 +44,8 @@ module.exports = {
   ],
   env: envSet,
   axios: {
-    baseURL: envSet.apiBaseUrl
+    baseURL: envSet.apiBaseUrl,
+    credentials: true
   }
 }
 
