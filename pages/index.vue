@@ -39,7 +39,6 @@ export default {
     }
   },
   async asyncData({app}) {
-    // TODO: GETリクエストはクライアントに移植
     let articles = await app.$axios.$get('/v1/articles');
     return {
       articles: articles.articles

@@ -46,6 +46,7 @@ module.exports = {
   axios: {
     baseURL: envSet.apiBaseUrl,
     credentials: true
-  }
+  },
+  plugins: ['~/plugins/axios']
 }
 
