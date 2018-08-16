@@ -1,11 +1,5 @@
 <template>
   <v-card>
-    <v-toolbar color="cyan" dark>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Collective Times</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
-
     <v-list two-line>
       <template v-for="(site, index) in sites">
         <v-list-tile
