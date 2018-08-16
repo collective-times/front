@@ -13,6 +13,16 @@
         <v-divider v-if="index + 1 < sites.length" :key="`divider-${index}`"></v-divider>
       </template>
     </v-list>
+
+    <v-btn
+      fab
+      color="pink
+      fixed
+      top
+      right
+     ">
+      <v-icon @click="$router.push('/sites/new')">add</v-icon>
+    </v-btn>
   </v-card>
 </template>
 

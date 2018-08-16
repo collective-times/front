@@ -25,6 +25,10 @@
     <v-btn
             @click="createSite"
     >Submit</v-btn>
+
+    <v-btn
+      @click="$router.push('/sites')"
+    >Back</v-btn>
   </v-form>
 </template>
 
