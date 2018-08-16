@@ -12,7 +12,9 @@
     ></v-text-field>
     <v-text-field
             v-model="password"
+            :type="'password'"
             label="Password"
+            counter
     ></v-text-field>
 
     <v-btn
