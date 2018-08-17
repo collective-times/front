@@ -17,10 +17,11 @@
             label="クロール"
             color="blue"
             ></v-switch>
-    <v-text-field
-            v-model="type"
-            label="種別"
-    ></v-text-field>
+    <v-select
+      v-model="type"
+      :items="types"
+      label="種別"
+    ></v-select>
 
     <v-btn
             @click="createSite"
@@ -33,9 +34,9 @@
 </template>
 
 <script>
+import _ from 'lodash';
 
 export default {
-  middleware: 'auth',
   data() {
     return {
       title: '',
@@ -43,6 +44,12 @@ export default {
       sourceUrl: '',
       crawlable: true,
       type: '',
+    }
+  },
+  async asyncData({app, store}) {
+    let contents_parsers = await app.$axios.$get('/v1/contents-parsers');
+    return {
+      types: _.map(contents_parsers['contents-parsers'], 'type')
     }
   },
   methods: {
