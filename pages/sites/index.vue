@@ -17,8 +17,8 @@
     <v-btn
       fab
       color="pink"
-      fixed
-      top
+      absolute
+      bottom 
       right
      >
       <v-icon @click="$router.push('/sites/new')">add</v-icon>
