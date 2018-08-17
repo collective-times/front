@@ -16,12 +16,13 @@
 
     <v-btn
       fab
-      color="pink
-      fixed
-      top
+      color="pink"
+      absolute
+      bottom 
       right
-     ">
-      <v-icon @click="$router.push('/sites/new')">add</v-icon>
+      @click.native="$router.push('/sites/new')"
+     >
+      <v-icon>add</v-icon>
     </v-btn>
   </v-card>
 </template>
