@@ -16,11 +16,11 @@
 
     <v-btn
       fab
-      color="pink
+      color="pink"
       fixed
       top
       right
-     ">
+     >
       <v-icon @click="$router.push('/sites/new')">add</v-icon>
     </v-btn>
   </v-card>
