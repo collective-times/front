@@ -20,8 +20,9 @@
       absolute
       bottom 
       right
+      @click="$router.push('/sites/new')"
      >
-      <v-icon @click="$router.push('/sites/new')">add</v-icon>
+      <v-icon>add</v-icon>
     </v-btn>
   </v-card>
 </template>
