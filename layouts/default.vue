@@ -1,15 +1,17 @@
 <template>
-  <v-layout row>
-    <v-flex xs12 sm6 offset-sm3>
-      <v-toolbar color="cyan" dark>
-        <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title>Collective Times</v-toolbar-title>
-        <v-spacer></v-spacer>
-      </v-toolbar>
+  <v-app>
+    <v-layout row>
+      <v-flex xs12 sm6 offset-sm3>
+        <v-toolbar color="cyan" dark>
+          <v-toolbar-side-icon></v-toolbar-side-icon>
+          <v-toolbar-title>Collective Times</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
 
-      <nuxt/>
-    </v-flex>
-  </v-layout>
+        <nuxt/>
+      </v-flex>
+    </v-layout>
+  </v-app>
 </template>
 
 <style>
