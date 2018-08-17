@@ -18,8 +18,8 @@
             color="blue"
             ></v-switch>
     <v-text-field
-            v-model="className"
-            label="クラス"
+            v-model="type"
+            label="種別"
     ></v-text-field>
 
     <v-btn
@@ -42,7 +42,7 @@ export default {
       feedUrl: '',
       sourceUrl: '',
       crawlable: true,
-      className: '',
+      type: '',
     }
   },
   methods: {
@@ -52,7 +52,7 @@ export default {
         feedUrl: this.feedUrl,
         sourceUrl: this.sourceUrl,
         crawlable: this.crawlable,
-        class: this.className,
+        type: this.type,
       }).then(() => {
         console.log('success');
         this.$router.push('/sites');
