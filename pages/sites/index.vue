@@ -20,7 +20,7 @@
       absolute
       bottom 
       right
-      @click="$router.push('/sites/new')"
+      @click.native="$router.push('/sites/new')"
      >
       <v-icon>add</v-icon>
     </v-btn>
