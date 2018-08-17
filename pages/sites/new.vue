@@ -17,10 +17,11 @@
             label="クロール"
             color="blue"
             ></v-switch>
-    <v-text-field
-            v-model="className"
-            label="クラス"
-    ></v-text-field>
+    <v-select
+      v-model="type"
+      :items="types"
+      label="種別"
+    ></v-select>
 
     <v-btn
             @click="createSite"
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 
 export default {
   middleware: 'auth',
@@ -42,7 +44,13 @@ export default {
       feedUrl: '',
       sourceUrl: '',
       crawlable: true,
-      className: '',
+      type: '',
+    }
+  },
+  async asyncData({app, store}) {
+    let contents_parsers = await app.$axios.$get('/v1/contents-parsers');
+    return {
+      types: _.map(contents_parsers['contents-parsers'], 'type')
     }
   },
   methods: {
@@ -52,7 +60,7 @@ export default {
         feedUrl: this.feedUrl,
         sourceUrl: this.sourceUrl,
         crawlable: this.crawlable,
-        class: this.className,
+        type: this.type,
       }).then(() => {
         console.log('success');
         this.$router.push('/sites');
