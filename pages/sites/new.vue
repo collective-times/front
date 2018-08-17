@@ -37,6 +37,7 @@
 import _ from 'lodash';
 
 export default {
+  middleware: 'auth',
   data() {
     return {
       title: '',
