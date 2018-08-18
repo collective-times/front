@@ -28,6 +28,10 @@
     >Submit</v-btn>
 
     <v-btn
+            @click="deleteSite($route.params.id)"
+    >Delete</v-btn>
+
+    <v-btn
       @click="$router.push('/sites')"
     >Back</v-btn>
   </v-form>
@@ -64,6 +68,14 @@ export default {
         crawlable: this.crawlable,
         type: this.type,
       }).then(() => {
+        console.log('success');
+        this.$router.push('/sites');
+      }).catch((error) => {
+        console.log(error);
+      });
+    },
+    deleteSite(site_id) {
+      this.$axios.delete('/v1/sites/' + site_id).then(() => {
         console.log('success');
         this.$router.push('/sites');
       }).catch((error) => {
