@@ -49,7 +49,7 @@
             flat
             @click="deleteSite($route.params.id)"
           >
-            
+          Delete
           </v-btn>
         </v-card-actions>
       </v-card>
