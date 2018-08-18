@@ -27,6 +27,34 @@
             @click="updateSite($route.params.id)"
     >Submit</v-btn>
 
+    <v-dialog
+      width="500"
+    >
+      <v-btn
+              color="warning"
+              slot="activator"
+      >Delete</v-btn>
+
+      <v-card>
+        <v-card-text>
+          Are you sure to delete?
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click="deleteSite($route.params.id)"
+          >
+          Delete
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <br />
     <v-btn
       @click="$router.push('/sites')"
     >Back</v-btn>
@@ -64,6 +92,14 @@ export default {
         crawlable: this.crawlable,
         type: this.type,
       }).then(() => {
+        console.log('success');
+        this.$router.push('/sites');
+      }).catch((error) => {
+        console.log(error);
+      });
+    },
+    deleteSite(site_id) {
+      this.$axios.delete('/v1/sites/' + site_id).then(() => {
         console.log('success');
         this.$router.push('/sites');
       }).catch((error) => {
