@@ -5,6 +5,7 @@
         <v-list-tile
                 ripple
                 :key="site.title"
+                @click="$router.push('/sites/edit/' + site.id)"
         >
           <v-list-tile-content>
             <v-list-tile-title>{{ site.title }}</v-list-tile-title>
