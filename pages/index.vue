@@ -12,9 +12,9 @@
             <img :src="article.imageUrl">
           </v-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>{{ article.title }}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ article.description }}</v-list-tile-sub-title>
-            <v-list-tile-sub-title>{{ article.date }}</v-list-tile-sub-title>
+            <v-list-tile-title v-html="article.title"></v-list-tile-title>
+            <v-list-tile-sub-title v-html="article.description"></v-list-tile-sub-title>
+            <v-list-tile-sub-title v-html="(article.date + ' ' + article.sourceTitle)"></v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-divider v-if="index + 1 < articles.length" :key="`divider-${index}`"></v-divider>
