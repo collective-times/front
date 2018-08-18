@@ -28,6 +28,7 @@
     >Submit</v-btn>
 
     <v-btn
+            color="warning"
             @click="deleteSite($route.params.id)"
     >Delete</v-btn>
 
