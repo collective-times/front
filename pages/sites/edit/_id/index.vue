@@ -49,12 +49,12 @@
             flat
             @click="deleteSite($route.params.id)"
           >
-            Delete
+            
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-
+    <br />
     <v-btn
       @click="$router.push('/sites')"
     >Back</v-btn>
