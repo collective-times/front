@@ -8,7 +8,7 @@
                 :href="article.articleUrl"
                 target="_blank"
         >
-          <v-avatar>
+          <v-avatar class="mr-2">
             <img :src="article.imageUrl">
           </v-avatar>
           <v-list-tile-content>
