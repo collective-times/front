@@ -47,6 +47,10 @@ module.exports = {
     baseURL: envSet.apiBaseUrl,
     credentials: true
   },
-  plugins: ['~/plugins/axios']
+  plugins: [
+    '~/plugins/axios',
+    { src: '~/plugins/local-storage', ssr: false },
+  ],
+  mode: 'spa'
 }
 
