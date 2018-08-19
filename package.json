@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/vuetify": "^0.4.2",
     "nuxt": "^1.0.0",
-    "vue-infinite-loading": "^2.3.1"
+    "vue-infinite-loading": "^2.3.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
