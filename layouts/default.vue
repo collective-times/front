@@ -15,23 +15,27 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="$router.push('/sites')">
-          <v-list-tile-action>
-            <v-icon>info</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Sites</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <template v-if="isLogined()">
+          <v-list-tile @click="$router.push('/sites')">
+            <v-list-tile-action>
+              <v-icon>info</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Sites</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
 
-        <v-list-tile @click="$router.push('/login')">
-          <v-list-tile-action>
-            <v-icon>assignment_ind</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Login</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <template v-else>
+          <v-list-tile @click="$router.push('/login')">
+            <v-list-tile-action>
+              <v-icon>assignment_ind</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Login</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
       </v-list>
     </v-navigation-drawer>
 
@@ -58,6 +62,11 @@ export default {
   data() {
     return {
       drawer: null
+    }
+  },
+  methods: {
+    isLogined() {
+      return this.$store.state.accessToken != null
     }
   }
 }
