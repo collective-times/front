@@ -1,19 +1,58 @@
 <template>
   <v-app>
-    <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
-        <v-toolbar color="cyan" dark>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-toolbar-title>Collective Times</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
+    <v-navigation-drawer
+      fixed
+      v-model="drawer"
+      app
+    >
+      <v-list dense>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Contact</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-        <nuxt/>
-      </v-flex>
-    </v-layout>
+    <v-toolbar
+      color="cyan"
+      dark
+      fixed
+      app
+      >
+      <v-toolbar-side-icon
+        @click.stop="drawer = !drawer"
+      ></v-toolbar-side-icon>
+      <v-toolbar-title>Collective Times</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <v-content>
+      <nuxt/>
+    </v-content>
   </v-app>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      drawer: null
+    }
+  }
+}
+
+</script>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
