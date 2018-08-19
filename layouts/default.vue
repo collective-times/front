@@ -6,7 +6,7 @@
       app
     >
       <v-list dense>
-        <v-list-tile>
+        <v-list-tile @click="$router.push('/')">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -14,12 +14,22 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile>
+
+        <v-list-tile @click="$router.push('/sites')">
           <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
+            <v-icon>info</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
+            <v-list-tile-title>Sites</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile @click="$router.push('/login')">
+          <v-list-tile-action>
+            <v-icon>assignment_ind</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
