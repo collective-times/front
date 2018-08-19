@@ -8,10 +8,10 @@
       <v-list dense>
         <v-list-tile @click="$router.push('/')">
           <v-list-tile-action>
-            <v-icon>home</v-icon>
+            <v-icon>list_alt</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <v-list-tile-title>Articles</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -51,7 +51,7 @@
       <v-toolbar-title>Collective Times</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-content>
+    <v-content app>
       <nuxt/>
     </v-content>
   </v-app>
