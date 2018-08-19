@@ -1,36 +1,38 @@
 <template>
-  <v-form>
-    <v-text-field
-            v-model="title"
-            label="サイト名"
-    ></v-text-field>
-    <v-text-field
-            v-model="feedUrl"
-            label="フィードURL"
-    ></v-text-field>
-    <v-text-field
-            v-model="sourceUrl"
-            label="サイトURL"
-    ></v-text-field>
-    <v-switch
-            v-model="crawlable"
-            label="クロール"
-            color="blue"
-            ></v-switch>
-    <v-select
-      v-model="type"
-      :items="types"
-      label="種別"
-    ></v-select>
+  <v-container>
+    <v-form>
+      <v-text-field
+              v-model="title"
+              label="サイト名"
+      ></v-text-field>
+      <v-text-field
+              v-model="feedUrl"
+              label="フィードURL"
+      ></v-text-field>
+      <v-text-field
+              v-model="sourceUrl"
+              label="サイトURL"
+      ></v-text-field>
+      <v-switch
+              v-model="crawlable"
+              label="クロール"
+              color="blue"
+              ></v-switch>
+      <v-select
+        v-model="type"
+        :items="types"
+        label="種別"
+      ></v-select>
 
-    <v-btn
-            @click="createSite"
-    >Submit</v-btn>
+      <v-btn
+              @click="createSite"
+      >Submit</v-btn>
 
-    <v-btn
-      @click="$router.push('/sites')"
-    >Back</v-btn>
-  </v-form>
+      <v-btn
+        @click="$router.push('/sites')"
+      >Back</v-btn>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
