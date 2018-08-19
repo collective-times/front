@@ -1,19 +1,77 @@
 <template>
   <v-app>
-    <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
-        <v-toolbar color="cyan" dark>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-toolbar-title>Collective Times</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
+    <v-navigation-drawer
+      fixed
+      v-model="drawer"
+      app
+    >
+      <v-list dense>
+        <v-list-tile @click="$router.push('/')">
+          <v-list-tile-action>
+            <v-icon>list_alt</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Articles</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
 
-        <nuxt/>
-      </v-flex>
-    </v-layout>
+        <template v-if="isLogined()">
+          <v-list-tile @click="$router.push('/sites')">
+            <v-list-tile-action>
+              <v-icon>info</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Sites</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+
+        <template v-else>
+          <v-list-tile @click="$router.push('/login')">
+            <v-list-tile-action>
+              <v-icon>assignment_ind</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Login</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-toolbar
+      color="cyan"
+      dark
+      fixed
+      app
+      >
+      <v-toolbar-side-icon
+        @click.stop="drawer = !drawer"
+      ></v-toolbar-side-icon>
+      <v-toolbar-title>Collective Times</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <v-content app>
+      <nuxt/>
+    </v-content>
   </v-app>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      drawer: null
+    }
+  },
+  methods: {
+    isLogined() {
+      return this.$store.state.accessToken != null
+    }
+  }
+}
+
+</script>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

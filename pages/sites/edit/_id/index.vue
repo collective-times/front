@@ -1,64 +1,66 @@
 <template>
-  <v-form>
-    <v-text-field
-            v-model="title"
-            label="サイト名"
-    ></v-text-field>
-    <v-text-field
-            v-model="feedUrl"
-            label="フィードURL"
-    ></v-text-field>
-    <v-text-field
-            v-model="sourceUrl"
-            label="サイトURL"
-    ></v-text-field>
-    <v-switch
-            v-model="crawlable"
-            label="クロール"
-            color="blue"
-            ></v-switch>
-    <v-select
-      v-model="type"
-      :items="types"
-      label="種別"
-    ></v-select>
+  <v-container>
+    <v-form>
+      <v-text-field
+              v-model="title"
+              label="サイト名"
+      ></v-text-field>
+      <v-text-field
+              v-model="feedUrl"
+              label="フィードURL"
+      ></v-text-field>
+      <v-text-field
+              v-model="sourceUrl"
+              label="サイトURL"
+      ></v-text-field>
+      <v-switch
+              v-model="crawlable"
+              label="クロール"
+              color="blue"
+              ></v-switch>
+      <v-select
+        v-model="type"
+        :items="types"
+        label="種別"
+      ></v-select>
 
-    <v-btn
-            @click="updateSite($route.params.id)"
-    >Submit</v-btn>
-
-    <v-dialog
-      width="500"
-    >
       <v-btn
-              color="warning"
-              slot="activator"
-      >Delete</v-btn>
+              @click="updateSite($route.params.id)"
+      >Submit</v-btn>
 
-      <v-card>
-        <v-card-text>
-          Are you sure to delete?
-        </v-card-text>
+      <v-dialog
+        width="500"
+      >
+        <v-btn
+                color="warning"
+                slot="activator"
+        >Delete</v-btn>
 
-        <v-divider></v-divider>
+        <v-card>
+          <v-card-text>
+            Are you sure to delete?
+          </v-card-text>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            flat
-            @click="deleteSite($route.params.id)"
-          >
-          Delete
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <br />
-    <v-btn
-      @click="$router.push('/sites')"
-    >Back</v-btn>
-  </v-form>
+          <v-divider></v-divider>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              flat
+              @click="deleteSite($route.params.id)"
+            >
+            Delete
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+      <br />
+      <v-btn
+        @click="$router.push('/sites')"
+      >Back</v-btn>
+    </v-form>
+  </v-container>
 </template>
 
 <script>

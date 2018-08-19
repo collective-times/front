@@ -1,20 +1,22 @@
 <template>
-  <v-form>
-    <v-text-field
-            v-model="email"
-            label="E-Mail"
-    ></v-text-field>
-    <v-text-field
-            v-model="password"
-            :type="'password'"
-            label="Password"
-            counter
-    ></v-text-field>
+  <v-container>
+    <v-form>
+      <v-text-field
+              v-model="email"
+              label="E-Mail"
+      ></v-text-field>
+      <v-text-field
+              v-model="password"
+              :type="'password'"
+              label="Password"
+              counter
+      ></v-text-field>
 
-    <v-btn
-            @click="login"
-    >Submit</v-btn>
-  </v-form>
+      <v-btn
+              @click="login"
+      >Submit</v-btn>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
