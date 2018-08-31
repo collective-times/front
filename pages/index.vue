@@ -8,7 +8,6 @@
                   :key="article.title"
                   :href="article.articleUrl"
                   target="_blank"
-                  color="#d5f9b6"
           >
             <v-avatar class="mr-2">
               <img :src="article.imageUrl">
@@ -25,6 +24,7 @@
                   ripple
                   :key="article.title"
                   :href="article.articleUrl"
+                  :color="#d5f9b6" 
                   target="_blank"
           >
             <v-avatar class="mr-2">
