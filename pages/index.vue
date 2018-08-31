@@ -26,6 +26,7 @@
                   :href="article.articleUrl"
                   :color="#d5f9b6"
                   target="_blank"
+                  style='background: #d5f9b6'
           >
             <v-avatar class="mr-2">
               <img :src="article.imageUrl">
