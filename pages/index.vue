@@ -24,7 +24,7 @@
                   ripple
                   :key="article.title"
                   :href="article.articleUrl"
-                  color="#d5f9b6" 
+                  :color="#d5f9b6"
                   target="_blank"
           >
             <v-avatar class="mr-2">
