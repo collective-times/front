@@ -7,6 +7,7 @@
                 :key="article.title"
                 :href="article.articleUrl"
                 target="_blank"
+                v-bind:class="{ non_hatena: !isHatena(article.sourceTitle) }"
         >
           <v-avatar class="mr-2">
             <img :src="article.imageUrl">
@@ -56,10 +57,16 @@ export default {
           console.log(error);
         })
     },
+    isHatena(string) {
+      return string.match(/.*はてな.*/)
+    }
   }
 }
 </script>
 
 <style>
+.non_hatena {
+  background: #d5f9b6;
+}
 </style>
 
