@@ -24,7 +24,6 @@
                   ripple
                   :key="article.title"
                   :href="article.articleUrl"
-                  :color="#d5f9b6"
                   target="_blank"
                   style='background: #d5f9b6'
           >
