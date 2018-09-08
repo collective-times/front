@@ -1,24 +1,24 @@
 <template>
   <v-card>
     <v-list two-line>
-      <template v-for="(article, index) in articles">
+      <template v-for="(history, index) in histories">
         <v-list-tile
                 ripple
-                :key="article.title"
-                :href="article.articleUrl"
+                :key="history.article.title"
+                :href="history.article.articleUrl"
                 target="_blank"
-                v-bind:class="{ non_hatena: !isHatena(article.sourceTitle) }"
+                v-bind:class="{ non_hatena: !isHatena(history.article.sourceTitle) }"
         >
           <v-avatar class="mr-2">
-            <img :src="article.imageUrl">
+            <img :src="history.article.imageUrl">
           </v-avatar>
           <v-list-tile-content>
-            <v-list-tile-title v-html="article.title"></v-list-tile-title>
-            <v-list-tile-sub-title v-html="article.description"></v-list-tile-sub-title>
-            <v-list-tile-sub-title v-html="(article.date + ' ' + article.sourceTitle)"></v-list-tile-sub-title>
+            <v-list-tile-title v-html="history.article.title"></v-list-tile-title>
+            <v-list-tile-sub-title v-html="history.article.description"></v-list-tile-sub-title>
+            <v-list-tile-sub-title v-html="(history.article.date + ' ' + history.article.sourceTitle)"></v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-divider v-if="index + 1 < articles.length" :key="`divider-${index}`"></v-divider>
+        <v-divider v-if="index + 1 < history.article.length" :key="`divider-${index}`"></v-divider>
       </template>
       <no-ssr>
         <infinite-loading @infinite="infiniteHandler"></infinite-loading>
@@ -40,9 +40,9 @@ export default {
     }
   },
   async asyncData({app}) {
-    let articles = await app.$axios.$get('/v1/histories');
+    let histories = await app.$axios.$get('/v1/histories');
     return {
-      articles: articles.articles
+      histories: histories.histories
     }
   },
   methods: {
@@ -50,7 +50,7 @@ export default {
       this.page++;
       this.$axios.$get('/v1/histories?page=' + this.page)
         .then((response) => {
-          this.articles = this.articles.concat(response.articles);
+          this.histories = this.histories.concat(response.histories);
           $state.loaded();
         }).catch(function (error) {
           // handle error
