@@ -5,8 +5,8 @@
         <v-list-tile
                 ripple
                 :key="article.title"
-                :href="article.articleUrl"
                 target="_blank"
+                @click="saveHistoryAndRedirect(article)"
                 v-bind:class="{ non_hatena: !isHatena(article.sourceTitle) }"
         >
           <v-avatar class="mr-2">
@@ -59,6 +59,13 @@ export default {
     },
     isHatena(string) {
       return string.match(/.*はてな.*/)
+    },
+    async saveHistoryAndRedirect(article) {
+      await this.$axios.post('/v1/histories', {
+        article_id: article.key,
+      });
+
+      location.href = article.articleUrl;
     }
   }
 }

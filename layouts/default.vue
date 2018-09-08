@@ -11,9 +11,20 @@
             <v-icon>list_alt</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Articles</v-list-tile-title>
+            <v-list-tile-title>Article</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <template>
+          <v-list-tile @click="$router.push('/histories')">
+            <v-list-tile-action>
+              <v-icon>history</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>History</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
 
         <template v-if="isLogined()">
           <v-list-tile @click="$router.push('/sites')">
@@ -21,7 +32,7 @@
               <v-icon>info</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>Sites</v-list-tile-title>
+              <v-list-tile-title>Site</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </template>
