@@ -16,7 +16,7 @@
         </v-list-tile>
 
         <template>
-          <v-list-tile @click="$router.push('/history')">
+          <v-list-tile @click="$router.push('/histories')">
             <v-list-tile-action>
               <v-icon>history</v-icon>
             </v-list-tile-action>
