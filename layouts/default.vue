@@ -15,7 +15,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <template v-if="isLogined()">
+        <template>
           <v-list-tile @click="$router.push('/history')">
             <v-list-tile-action>
               <v-icon>history</v-icon>
