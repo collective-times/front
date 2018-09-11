@@ -65,7 +65,7 @@ export default {
         article_id: article.key,
       });
 
-      location.href = article.articleUrl;
+      window.open(article.articleUrl, '_blank');
     }
   }
 }
