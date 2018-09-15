@@ -16,7 +16,7 @@
           </v-list-tile-content>
 
           <v-avatar class="mr-2">
-            <img :src="article.imageUrl" v-if="article.imageUrl">
+            <img :src="history.article.imageUrl" v-if="history.article.imageUrl">
           </v-avatar>
         </v-list-tile>
         <v-divider v-if="index + 1 < history.article.length" :key="`divider-${index}`"></v-divider>
