@@ -62,11 +62,11 @@ export default {
       return string.match(/.*はてな.*/)
     },
     async saveHistoryAndRedirect(article) {
+      window.open(article.articleUrl, '_blank');
+
       await this.$axios.post('/v1/histories', {
         article_id: article.key,
       });
-
-      window.open(article.articleUrl, '_blank');
     }
   }
 }
