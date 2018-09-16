@@ -39,7 +39,6 @@ module.exports = {
     },
   },
   modules: [
-    '@nuxtjs/vuetify',
     '@nuxtjs/axios',
   ],
   env: envSet,
@@ -49,6 +48,7 @@ module.exports = {
   },
   plugins: [
     '~/plugins/axios',
+    '~/plugins/vuetify',
     { src: '~/plugins/local-storage', ssr: false },
   ],
   mode: 'spa'

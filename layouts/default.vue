@@ -8,7 +8,7 @@
       <v-list dense>
         <v-list-tile @click="$router.push('/')">
           <v-list-tile-action>
-            <v-icon>list_alt</v-icon>
+            <v-icon>subject</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Article</v-list-tile-title>
