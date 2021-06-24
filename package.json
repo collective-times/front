@@ -26,6 +26,6 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^3.0.4",
     "eslint-plugin-vue": "^6.2.2",
-    "material-design-icons-iconfont": "^5.0.1"
+    "material-design-icons-iconfont": "^6.1.0"
   }
 }
